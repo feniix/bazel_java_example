@@ -16,4 +16,109 @@ container_pull(
   repository = "distroless/java",
   tag = "latest",
 )
-  #digest = "sha256:f488c213f278bc5f9ffe3ddf30c5dbb2303a15a74146b738d12453088e662880",
+
+#################### generate workspace deps #########################################
+maven_jar(
+    name = "org_junit_jupiter_junit_jupiter_api",
+    artifact = "org.junit.jupiter:junit-jupiter-api:5.4.0",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "1a09f25a160f71c267f9ebe3b229b17805c683e9",
+)
+
+
+maven_jar(
+    name = "org_junit_platform_junit_platform_runner",
+    artifact = "org.junit.platform:junit-platform-runner:1.4.0",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "a8a0ef915bf648671d9404c1cfe52e4b80b14243",
+)
+
+
+# org.junit.platform:junit-platform-runner:jar:1.4.0
+maven_jar(
+    name = "org_junit_platform_junit_platform_launcher",
+    artifact = "org.junit.platform:junit-platform-launcher:1.4.0",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "5cc8b7b305ffc79aa124a1a4fe5efab114f28cac",
+)
+
+
+# org.junit.platform:junit-platform-launcher:jar:1.4.0 got requested version
+# org.junit.platform:junit-platform-engine:jar:1.4.0 got requested version
+# org.junit.platform:junit-platform-commons:jar:1.4.0 got requested version
+# org.junit.jupiter:junit-jupiter-engine:jar:5.4.0
+# org.junit.platform:junit-platform-runner:jar:1.4.0 got requested version
+# org.junit.jupiter:junit-jupiter-api:jar:5.4.0 got requested version
+# org.junit.platform:junit-platform-suite-api:jar:1.4.0 got requested version
+maven_jar(
+    name = "org_apiguardian_apiguardian_api",
+    artifact = "org.apiguardian:apiguardian-api:1.0.0",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "3ef5276905e36f4d8055fe3cb0bdcc7503ffc85d",
+)
+
+
+# junit:junit:jar:4.12
+maven_jar(
+    name = "org_hamcrest_hamcrest_core",
+    artifact = "org.hamcrest:hamcrest-core:1.3",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "42a25dc3219429f0e5d060061f71acb49bf010a0",
+)
+
+
+# org.junit.jupiter:junit-jupiter-api:jar:5.4.0 got requested version
+# org.junit.platform:junit-platform-engine:jar:1.4.0
+maven_jar(
+    name = "org_opentest4j_opentest4j",
+    artifact = "org.opentest4j:opentest4j:1.1.1",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "efd9f971e91074491ea55b19f67b13470cf4fcdd",
+)
+
+
+# org.junit.jupiter:junit-jupiter-api:jar:5.4.0 got requested version
+# org.junit.platform:junit-platform-engine:jar:1.4.0
+maven_jar(
+    name = "org_junit_platform_junit_platform_commons",
+    artifact = "org.junit.platform:junit-platform-commons:1.4.0",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "e0b2ed8fac32ad6469d75d034e759f1969db8dda",
+)
+
+
+# org.junit.platform:junit-platform-runner:jar:1.4.0
+maven_jar(
+    name = "junit_junit",
+    artifact = "junit:junit:4.12",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "2973d150c0dc1fefe998f834810d68f278ea58ec",
+)
+
+
+maven_jar(
+    name = "org_junit_jupiter_junit_jupiter_engine",
+    artifact = "org.junit.jupiter:junit-jupiter-engine:5.4.0",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "30083adf3fbd7b734f12e6cb4d99dedab99fc34b",
+)
+
+
+# org.junit.platform:junit-platform-runner:jar:1.4.0
+maven_jar(
+    name = "org_junit_platform_junit_platform_suite_api",
+    artifact = "org.junit.platform:junit-platform-suite-api:1.4.0",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "8c03ee0615180d219c2dac86b004bd5d32b5649c",
+)
+
+
+# org.junit.platform:junit-platform-launcher:jar:1.4.0 got requested version
+# org.junit.jupiter:junit-jupiter-engine:jar:5.4.0
+maven_jar(
+    name = "org_junit_platform_junit_platform_engine",
+    artifact = "org.junit.platform:junit-platform-engine:1.4.0",
+    repository = "https://repo.maven.apache.org/maven2/",
+    sha1 = "b4419dc190a5d82b9cac6b52e0af9140895c3f87",
+)
+

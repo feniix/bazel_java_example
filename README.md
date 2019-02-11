@@ -19,3 +19,22 @@ bazel build //:runner
 ```shell
 bazel build //:runner_deploy.jar
 ```
+
+## run tests
+
+```shell
+bazel test :tests
+```
+
+## build docker image
+
+```shell
+bazel build :docker
+```
+
+## run app in docker image
+
+```shell
+bazel run :docker
+docker run -it --rm bazel:docker
+```

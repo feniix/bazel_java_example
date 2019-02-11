@@ -1,7 +1,7 @@
 package com.example;
 
-class Greeting {
+public class Greeting {
   void Greeting(){
-    System.out.println("hello");
+    System.out.println("greetings humans!");
   }
 }
