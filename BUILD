@@ -1,7 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
 java_binary(
-    name = "router",
+    name = "runner",
     main_class = "com.example.ProjectRunner",
     srcs = ["src/main/java/com/example/ProjectRunner.java"],
     deps = [":greeter"]
