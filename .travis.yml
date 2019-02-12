@@ -25,10 +25,11 @@ addons:
 
 before_script:
   - bazel version
+  - docker version
 
 script:
-  - bazel test :tests
-  - bazel build :runner_deploy.jar
-  - bazel run :docker
-  - docker run -it --rm bazel:docker
+  - bazel test //test:test
+  - bazel build //main:main_deploy.jar
+  - bazel run //docker:image
+  - docker run -it --rm bazel/docker:image
 
