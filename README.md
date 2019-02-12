@@ -11,30 +11,30 @@ brew install bazel
 ## build project
 
 ```shell
-bazel build //:runner
+bazel build //main:main
 ```
 
 ## package jar for runtime
 
 ```shell
-bazel build //:runner_deploy.jar
+bazel build //main:main_deploy.jar
 ```
 
 ## run tests
 
 ```shell
-bazel test :tests
+bazel test //test:test
 ```
 
 ## build docker image
 
 ```shell
-bazel build :docker
+bazel build //docker:image
 ```
 
 ## run app in docker image
 
 ```shell
-bazel run :docker
-docker run -it --rm bazel:docker
+bazel run //docker:image
+docker run -it --rm bazel/docker:image
 ```
