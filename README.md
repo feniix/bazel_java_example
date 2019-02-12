@@ -23,7 +23,7 @@ bazel build //main:main_deploy.jar
 ## run tests
 
 ```shell
-bazel test //test:test
+bazel test //test:all
 ```
 
 ## build docker image

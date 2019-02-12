@@ -17,6 +17,26 @@ container_pull(
   tag = "latest",
 )
 
+# Kotlin support
+rules_kotlin_version = "a632c3a30bb0bd9f5f88fb771489809b9aba602f"
+
+http_archive(
+    name = "io_bazel_rules_kotlin",
+    urls = ["https://github.com/bazelbuild/rules_kotlin/archive/%s.zip" % rules_kotlin_version],
+    type = "zip",
+    strip_prefix = "rules_kotlin-%s" % rules_kotlin_version
+)
+
+load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kotlin_repositories", "kt_register_toolchains")
+my_compiler_release = {
+    "urls": [
+        "https://github.com/JetBrains/kotlin/releases/download/v1.2.71/kotlin-compiler-1.2.71.zip",
+    ],
+    "sha256": "e48292fdfed42f44230bc01f92ffd17002101d8c5aeedfa3dba3cb29c5b6ea7b",
+}
+kotlin_repositories(compiler_release = my_compiler_release)
+kt_register_toolchains()
+
 #################### generate workspace deps #########################################
 maven_jar(
     name = "org_junit_jupiter_junit_jupiter_api",

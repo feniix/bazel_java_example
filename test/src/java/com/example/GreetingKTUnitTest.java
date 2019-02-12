@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.Greeting;
+import com.example.GreetingKT;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -13,18 +13,18 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 
 @RunWith(JUnitPlatform.class)
-public class GreetingUnitTest {
+public class GreetingKTUnitTest {
 
     @Test
-    void whenGreetingMustReplyGreetingsHumans() {
+    void whenGreetingKTMustReplyGreetingsHumansKT() {
 
         OutputStream os = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(os);
         System.setOut(ps);
-        String output = "greetings humans!" + System.getProperty("line.separator");
+        String output = "greetings humans!!! (from kotlin)" + System.getProperty("line.separator");
 
-        Greeting greet = new Greeting();
-        greet.Greeting();
+        GreetingKT greetkt = new GreetingKT();
+        greetkt.GreetingKT();
 
         assertTrue(output.equals(((ByteArrayOutputStream) os).toString()));
 

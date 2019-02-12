@@ -5,6 +5,7 @@ java_binary(
     main_class = "com.example.Runner",
     srcs = glob(["src/java/com/example/*.java"]),
     deps = [
-        "//lib:greeter"
+        "//lib:greeter",
+        "//libkt:greeter_kt",
     ],
 )

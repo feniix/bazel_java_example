@@ -28,7 +28,7 @@ before_script:
   - docker version
 
 script:
-  - bazel test //test:test
+  - bazel test //test:all
   - bazel build //main:main_deploy.jar
   - bazel run //docker:image
   - docker run -it --rm bazel/docker:image
